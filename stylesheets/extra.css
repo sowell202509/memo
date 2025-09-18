@@ -1,0 +1,80 @@
+:root {
+  /* 優しいブラウン系（Materialの上に被せる） */
+  --brand-brown: #8b6b4c;
+  --brand-brown-ink: #5b4733;
+  --brand-cream: #f7f3ee;
+  --brand-cream-ink: #3c2f23;
+
+  /* Material の変数を最小限上書き */
+  --md-primary-fg-color: var(--brand-brown);
+  --md-primary-fg-color--light: #a98c6f;
+  --md-primary-fg-color--dark: #6f543a;
+}
+
+/* 本文の可読性を上げる */
+.md-typeset {
+  line-height: 1.9;
+  font-feature-settings: "palt" 1; /* プロポーショナル和文 */
+}
+
+/* ヒーローエリア */
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  background: var(--brand-cream);
+  border-radius: 16px;
+  padding: 1.2rem; /* モバイル基準 */
+}
+.hero-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+}
+.hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: .72rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.btn.primary { background: var(--brand-brown); color: #fff; }
+.btn.ghost { background: transparent; color: var(--brand-brown-ink); border-color: var(--brand-brown); }
+.btn:hover { opacity: .92; }
+
+/* カードグリッド */
+.grid.cards.three {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.card {
+  display: block;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem 1rem 1.1rem;
+  border: 1px solid #eee;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
+  transition: transform .08s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+.card-emoji { font-size: 1.6rem; }
+.card-title { font-weight: 700; margin-top: .25rem; }
+.card-text { color: #555; margin-top: .3rem; }
+
+/* サイドの目次を読みやすく */
+.md-nav__link { line-height: 1.6; }
+
+/* 768px以上でレイアウト拡張 */
+@media (min-width: 768px) {
+  .hero-wrap { grid-template-columns: 1.2fr .8fr; padding: 1.6rem; }
+  .hero-img { max-height: 260px; }
+  .grid.cards.three { grid-template-columns: repeat(3, 1fr); }
+}
