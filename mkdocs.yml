@@ -1,0 +1,52 @@
+site_name: 癒しのクマさんラーニング
+site_description: 読んで・見て・すぐ実践。やさしい学習サイト。
+site_url: https://<GitHubユーザー名>.github.io/<リポジトリ名>/
+
+theme:
+  name: material
+  language: ja
+  logo: media/logo.png         # 省略してもOK
+  favicon: media/logo.png      # 省略してもOK
+  features:
+    - navigation.tabs          # 上部にタブを表示
+    - navigation.sections      # サイドバーを章ごとに区切る
+    - navigation.top           # ページ末尾に「トップへ」ボタン
+    - content.code.copy        # コードブロックにコピーボタン
+    - search.suggest
+    - search.highlight
+    - toc.integrate            # 目次を本文右側に統合（PC向け）
+  palette:
+    - scheme: default
+      primary: brown           # 癒しのブラウン
+      accent: brown
+  font:
+    text: "Noto Sans JP"
+    code: "Fira Code"
+
+extra_css:
+  - stylesheets/extra.css
+
+# サイト内ナビ
+nav:
+  - ホーム: index.md
+  - シラバス: syllabus.md
+  - 学習ログ: logs/index.md
+  - リソース保管庫: resources/README.md
+
+# Markdown拡張（見栄えと読みやすさ）
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+# （任意）フッターリンク
+extra:
+  social:
+    - icon: material/instagram
+      link: https://www.instagram.com/
+    - icon: material/youtube
+      link: https://www.youtube.com/
